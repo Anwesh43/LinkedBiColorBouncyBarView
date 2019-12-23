@@ -33,7 +33,7 @@ fun Canvas.drawBiColorBouncyBar(scale : Float, size : Float, paint : Paint) {
     val sf2 : Float = sf.divideScale(1, 2)
     val sf3 : Float = scale.divideScale(3, 4).cosify()
     paint.color = foreColor1
-    drawRect(RectF(-size + 2 * size * sf2, -size, -size + 2 * size * sf2, size), paint)
+    drawRect(RectF(-size + 2 * size * sf2, -size, -size + 2 * size * sf1, size), paint)
     paint.color = foreColor2
     drawRect(RectF(size - 2 * size * sf3, -size, size, size), paint)
 }

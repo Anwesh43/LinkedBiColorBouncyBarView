@@ -179,4 +179,26 @@ class BiColorBouncyBarView(ctx : Context) : View(ctx) {
         }
     }
 
+    data class Renderer(var view : BiColorBouncyBarView) {
+
+        private val animator : Animator = Animator(view)
+        private val bcbb : BiColorBouncyBar = BiColorBouncyBar(0)
+
+        fun render(canvas : Canvas, paint : Paint) {
+            canvas.drawColor(backColor)
+            bcbb.draw(canvas, paint)
+            animator.animate {
+                bcbb.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            bcbb.startUpdating {
+                animator.start()
+            }
+        }
+    }
+
 }

@@ -202,4 +202,13 @@ class BiColorBouncyBarView(ctx : Context) : View(ctx) {
         }
     }
 
+    companion object {
+
+        fun create(activity : Activity) : BiColorBouncyBarView {
+            val view : BiColorBouncyBarView = BiColorBouncyBarView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
+
 }
